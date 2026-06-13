@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SERVIHogar – Encuentra servicios confiables cerca de ti</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#inicio" class="nav-logo">
+      <img src="assets/logo.png" alt="SERVIHogar logo" class="nav-logo__img" />
+      <span class="nav-logo__text"><span class="green-dark">SERVI</span><span class="green-light">Hogar</span></span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+        <li><a href="#servicios" class="nav-link">Servicios</a></li>
+        <li><a href="#como-funciona" class="nav-link">Cómo funciona</a></li>
+        <li><a href="#trabaja" class="nav-link">Trabaja con nosotros</a></li>
+        <li><a href="#resenas" class="nav-link">Reseñas</a></li>
+    </ul>
+    <div class="nav-actions">
+      <input type="text" placeholder="Buscar servicio..." class="nav-search" id="nav-search" />
+      <button class="btn-sesion" id="btn-login">Iniciar sesión</button>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ============================================================
+     DESKTOP-1: HERO
+============================================================ -->
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>Encuentra servicios confiables cerca de ti</h1><br>
+      <p>Conecta con profesionales independientes y contrata de manera rápida y segura.</p><br>
+      <button class="btn-green" onclick="document.getElementById('servicios').scrollIntoView({behavior:'smooth'})">Buscar ahora</button>
+    </div>
+    <div class="hero-photo">
+      <div class="hero-blob"></div>
+      <img src="assets/hero.jpg"
+        alt="Profesional de limpieza"
+        class="hero-photo-real">
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ESTADÍSTICAS ANIMADAS
+============================================================ -->
+<section class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <span class="stat-number" data-target="1200" data-suffix="+">0</span>
+      <span class="stat-label">Profesionales activos</span>
+    </div>
+    <div class="stat-item reveal reveal-delay-1">
+      <span class="stat-number" data-target="8500" data-suffix="+">0</span>
+      <span class="stat-label">Servicios completados</span>
+    </div>
+    <div class="stat-item reveal reveal-delay-2">
+      <span class="stat-number" data-target="97" data-suffix="%">0</span>
+      <span class="stat-label">Clientes satisfechos</span>
+    </div>
+    <div class="stat-item reveal reveal-delay-3">
+      <span class="stat-number" data-target="6" data-suffix=" cat.">0</span>
+      <span class="stat-label">Categorías de servicio</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROFESIONALES DESTACADOS
+============================================================ -->
+<section class="professionals" id="profesionales">
+  <div class="section-container">
+    <h2 class="section-title-left reveal">Profesionales destacados</h2>
+
+    <div class="pros-slider-wrap reveal">
+      <button class="slider-btn slider-btn--prev pros-slider-btn--prev" aria-label="Anterior">&#8592;</button>
+      <button class="slider-btn slider-btn--next pros-slider-btn--next" aria-label="Siguiente">&#8594;</button>
+
+      <div class="pros-track">
+
+        <div class="pro-card" data-name="maria lopez" data-cat="limpieza">
+          <img src="assets/maria.jpg"
+            alt="Maria Lopez"
+            class="pro-photo-real">
+          <div class="pro-details">
+            <strong>Maria Lopez</strong>
+            <span class="pro-category">Limpieza</span>
+            <div class="pro-rating"><span class="star-y">★★★★☆</span> <em>4.9 (96)</em></div>
+            <span class="pro-price">S/ 25 por hora</span>
+            <button class="btn-ver" onclick="openProfile('Maria Lopez','Limpieza','4.9','96','25','ML','#8bc34a')">Ver perfil</button>
+          </div>
+        </div>
+
+        <div class="pro-card" data-name="jorge ramos" data-cat="electricista">
+          <img src="assets/jorge.jpg"
+            alt="Jorge Ramos"
+            class="pro-photo-real">
+          <div class="pro-details">
+            <strong>Jorge Ramos</strong>
+            <span class="pro-category">Electricista</span>
+            <div class="pro-rating"><span class="star-y">★★★★★</span> <em>4.8 (66)</em></div>
+            <span class="pro-price">S/ 30 por hora</span>
+            <button class="btn-ver" onclick="openProfile('Jorge Ramos','Electricista','4.8','66','30','JR','#ff8f00')">Ver perfil</button>
+          </div>
+        </div>
+
+        <div class="pro-card" data-name="jose garabay" data-cat="jardinería">
+          <img src="assets/jose.jpg"
+            alt="Jose Garabay"
+            class="pro-photo-real">
+          <div class="pro-details">
+            <strong>Jose Garabay</strong>
+            <span class="pro-category">Jardinería</span>
+            <div class="pro-rating"><span class="star-y">★★★★☆</span> <em>4.4 (83)</em></div>
+            <span class="pro-price">S/ 25 por hora</span>
+            <button class="btn-ver" onclick="openProfile('Jose Garabay','Jardinería','4.4','83','25','JG','#388e3c')">Ver perfil</button>
+          </div>
+        </div>
+
+        <div class="pro-card" data-name="elena casas" data-cat="cocina">
+
+          <img src="assets/elena.jpg"
+            alt="Elena Casas"
+            class="pro-photo-real">
+          <div class="pro-details">
+            <strong>Elena Casas</strong>
+            <span class="pro-category">Cocina</span>
+            <div class="pro-rating"><span class="star-y">★★★★★</span> <em>4.7 (85)</em></div>
+            <span class="pro-price">S/ 28 por hora</span>
+            <button class="btn-ver" onclick="openProfile('Elena Casas','Cocina','4.7','85','28','EC','#1565c0')">Ver perfil</button>
+          </div>
+        </div>
+
+        <div class="pro-card" data-name="carlos mendez" data-cat="gasfitería">
+          <img src="assets/carlos.jpg"
+            alt="Carlos Mendez"
+            class="pro-photo-real">
+          <div class="pro-details">
+            <strong>Carlos Mendez</strong>
+            <span class="pro-category">Gasfitería</span>
+            <div class="pro-rating"><span class="star-y">★★★★★</span> <em>4.6 (74)</em></div>
+            <span class="pro-price">S/ 27 por hora</span>
+            <button class="btn-ver" onclick="openProfile('Carlos Mendez','Gasfitería','4.6','74','27','CM','#0288d1')">Ver perfil</button>
+          </div>
+        </div>
+
+        <div class="pro-card" data-name="rosa fernandez" data-cat="pintura">
+          <img src="assets/elias.jpg"
+            alt="Rosa Fernandez"
+            class="pro-photo-real">
+          <div class="pro-details">
+            <strong>Elias Fernandez</strong>
+            <span class="pro-category">Pintura</span>
+            <div class="pro-rating"><span class="star-y">★★★★★</span> <em>4.9 (58)</em></div>
+            <span class="pro-price">S/ 26 por hora</span>
+            <button class="btn-ver" onclick="openProfile('Rosa Fernandez','Pintura','4.9','58','26','RF','#7b1fa2')">Ver perfil</button>
+          </div>
+        </div>
+
+        <div class="pro-card" data-name="lucas herrera" data-cat="limpieza">
+          <img src="assets/lucas.webp"
+            alt="Lucas Herrera"
+            class="pro-photo-real">
+          <div class="pro-details">
+            <strong>Lucas Herrera</strong>
+            <span class="pro-category">Limpieza</span>
+            <div class="pro-rating"><span class="star-y">★★★★☆</span> <em>4.5 (62)</em></div>
+            <span class="pro-price">S/ 24 por hora</span>
+            <button class="btn-ver" onclick="openProfile('Lucas Herrera','Limpieza','4.5','62','24','LH','#00897b')">Ver perfil</button>
+          </div>
+        </div>
+
+        <div class="pro-card" data-name="andrea quispe" data-cat="cocina">
+          <img src="assets/andrea.png"
+            alt="Andrea Quispe"
+            class="pro-photo-real">
+          <div class="pro-details">
+            <strong>Andrea Quispe</strong>
+            <span class="pro-category">Cocina</span>
+            <div class="pro-rating"><span class="star-y">★★★★★</span> <em>4.8 (47)</em></div>
+            <span class="pro-price">S/ 29 por hora</span>
+            <button class="btn-ver" onclick="openProfile('Andrea Quispe','Cocina','4.8','47','29','AQ','#d81b60')">Ver perfil</button>
+          </div>
+        </div>
+
+      </div>
+      </div>
+
+      <div class="pros-dots"></div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     DESKTOP-2: NUESTROS SERVICIOS
+============================================================ -->
+<section class="services" id="servicios">
+  <div class="section-container">
+    <h2 class="section-title-center reveal">Nuestros Servicios</h2>
+    <div class="services-grid">
+
+      <div class="svc-card reveal">
+        <div class="svc-img">
+          <img src="assets/limpieza.png" 
+                alt="Limpieza" 
+                class="service-image">
+        </div>
+        <h3>Limpieza</h3>
+        <button class="btn-green btn-sm" onclick="filterService('Limpieza')">Ver más</button>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-img">
+          <img src="assets/cocina.jpg" 
+                alt="Cocina" 
+                class="service-image">
+        </div>
+        <h3>Cocina</h3>
+        <button class="btn-green btn-sm" onclick="filterService('Cocina')">Ver más</button>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-img">
+          <img src="assets/jardineria.jpg" 
+                alt="Jardineria" 
+                class="service-image">
+        </div>
+        <h3>Jardinería</h3>
+        <button class="btn-green btn-sm" onclick="filterService('Jardinería')">Ver más</button>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-img">
+         <img src="assets/gasfiteria.png" 
+                alt="Gasfiteria" 
+                class="service-image">
+        </div>
+        <h3>Gasfitería</h3>
+        <button class="btn-green btn-sm" onclick="filterService('Gasfitería')">Ver más</button>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-img">
+          <img src="assets/electricista.png" 
+                alt="Electricista" 
+                class="service-image">
+        </div>
+        <h3>Electricista</h3>
+        <button class="btn-green btn-sm" onclick="filterService('Electricista')">Ver más</button>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-img">
+         <img src="assets/pintura.png" 
+                alt="Pintura de interiores" 
+                class="service-image">
+        </div>
+        <h3>Pintura de Interiores</h3>
+        <button class="btn-green btn-sm" onclick="filterService('Pintura')">Ver más</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DESKTOP-3: CÓMO FUNCIONA
+============================================================ -->
+<section class="how" id="como-funciona">
+  <div class="section-container">
+    <h2 class="section-title-center reveal">¿Como Funciona SERVIHogar?</h2>
+    <div class="how-box">
+      <div class="how-grid">
+
+        <div class="how-step reveal">
+          <span class="how-num">01</span>
+          <div class="how-icon">
+            <svg width="52" height="52" fill="none" stroke="#27ae60" stroke-width="2.5" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <p>Busca lo<br>que<br>necesitas</p>
+        </div>
+
+        <div class="how-step reveal">
+          <span class="how-num">02</span>
+          <div class="how-icon">
+            <svg width="52" height="52" fill="none" stroke="#27ae60" stroke-width="2.5" viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+              <path d="M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <p>Elige al<br>experto</p>
+        </div>
+
+        <div class="how-step reveal">
+          <span class="how-num">03</span>
+          <div class="how-icon">
+            <svg width="52" height="52" fill="none" stroke="#27ae60" stroke-width="2.5" viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="18" rx="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <p>Agenda a tu<br>manera</p>
+        </div>
+
+        <div class="how-step reveal">
+          <span class="how-num">04</span>
+          <div class="how-icon">
+            <svg width="52" height="52" fill="none" stroke="#27ae60" stroke-width="2.5" viewBox="0 0 24 24">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <p>¡Todo listo!</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TRABAJA CON NOSOTROS
+============================================================ -->
+<section class="cta-work" id="trabaja">
+  <div class="cta-work-inner">
+    <div class="cta-work-text reveal">
+      <h2>¿BUSCAS NUEVAS<br>OPORTUNIDADES<br>DE TRABAJO?</h2>
+      <p><strong>Ofrece tus servicios y conecta con<br>clientes de manera rápida y segura.</strong></p>
+      <button class="btn-green btn-postula" onclick="openRegister()">Postula Ahora</button>
+    </div>
+    <div class="cta-work-photo reveal reveal-delay-2">
+      <!-- Grupo de trabajadores con uniforme -->
+      <img src="assets/equipo.webp"
+      alt="Equipo de trabajadores"
+      style="width:100%;max-width:420px;border-radius:16px;
+            box-shadow:0 8px 32px rgba(0,0,0,.2);position:relative;z-index:1">
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RESEÑAS DE USUARIOS
+============================================================ -->
+<section class="reviews-section" id="resenas">
+  <div class="section-container">
+    <h2 class="section-title-center reveal">Lo que dicen nuestros usuarios</h2>
+    <p class="reviews-subtitle reveal">Confianza que se construye con cada servicio</p>
+
+    <!-- SLIDER -->
+    <div class="reviews-slider-wrap reveal">
+      <button class="slider-btn slider-btn--prev reviews-slider-btn--prev" aria-label="Anterior">&#8592;</button>
+      <button class="slider-btn slider-btn--next reviews-slider-btn--next" aria-label="Siguiente">&#8594;</button>
+
+      <div class="reviews-track">
+
+        <div class="review-slide">
+          <div class="review-slide__quote">"</div>
+          <p class="review-slide__text">Encontré un electricista en menos de 15 minutos. El servicio fue excelente y el proceso súper seguro. ¡Recomiendo SERVIHogar al 100%!</p>
+          <div class="review-slide__stars">★★★★★</div>
+          <div class="review-slide__author">
+            <div class="review-slide__avatar" style="background:#8B5CF6;">CR</div>
+            <div>
+              <div class="review-slide__name">Carmen Rios</div>
+              <div class="review-slide__role">Cliente · Miraflores</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-slide">
+          <div class="review-slide__quote">"</div>
+          <p class="review-slide__text">Gracias a SERVIHogar tengo clientes constantes. Mi agenda está llena y puedo gestionar todo fácilmente. Es la herramienta que todo trabajador independiente necesita.</p>
+          <div class="review-slide__stars">★★★★★</div>
+          <div class="review-slide__author">
+            <div class="review-slide__avatar" style="background:#27ae60;">RL</div>
+            <div>
+              <div class="review-slide__name">Roberto Luna</div>
+              <div class="review-slide__role">Gasfitero · San Borja</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-slide">
+          <div class="review-slide__quote">"</div>
+          <p class="review-slide__text">Lo que más valoro es la seguridad. Todos los perfiles están verificados y puedo leer opiniones reales antes de contratar. Me da mucha tranquilidad.</p>
+          <div class="review-slide__stars">★★★★★</div>
+          <div class="review-slide__author">
+            <div class="review-slide__avatar" style="background:#F59E0B;">AP</div>
+            <div>
+              <div class="review-slide__name">Ana Paredes</div>
+              <div class="review-slide__role">Cliente · Surco</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-slide">
+          <div class="review-slide__quote">"</div>
+          <p class="review-slide__text">Contraté a una profesional de limpieza para mi departamento y quedé encantada. Puntual, ordenada y muy amable. Sin duda volvería a usar la plataforma.</p>
+          <div class="review-slide__stars">★★★★☆</div>
+          <div class="review-slide__author">
+            <div class="review-slide__avatar" style="background:#e91e63;">LM</div>
+            <div>
+              <div class="review-slide__name">Lucía Mendoza</div>
+              <div class="review-slide__role">Cliente · San Isidro</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-slide">
+          <div class="review-slide__quote">"</div>
+          <p class="review-slide__text">Excelente plataforma para ofrecer mis servicios de jardinería. En pocas semanas conseguí varios clientes fijos. El proceso de registro fue muy sencillo.</p>
+          <div class="review-slide__stars">★★★★★</div>
+          <div class="review-slide__author">
+            <div class="review-slide__avatar" style="background:#388e3c;">PV</div>
+            <div>
+              <div class="review-slide__name">Pedro Vargas</div>
+              <div class="review-slide__role">Jardinero · La Molina</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-slide">
+          <div class="review-slide__quote">"</div>
+          <p class="review-slide__text">Usé SERVIHogar para contratar un pintor y la experiencia fue impecable. Precios claros, sin sorpresas y con garantía del trabajo. Totalmente recomendado.</p>
+          <div class="review-slide__stars">★★★★★</div>
+          <div class="review-slide__author">
+            <div class="review-slide__avatar" style="background:#1565c0;">DT</div>
+            <div>
+              <div class="review-slide__name">Diego Torres</div>
+              <div class="review-slide__role">Cliente · Jesús María</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Dots de navegación -->
+    <div class="reviews-dots"></div>
+
+    <!-- Dato destacado -->
+    <div class="reviews-highlight reveal">
+      <strong>97%</strong>
+      <p>de nuestros clientes recomiendan SERVIHogar a familiares y amigos tras su primera experiencia.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="footer">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <a href="#inicio" class="footer-logo">
+        <img src="assets/logo.png" alt="SERVIHogar" class="footer-logo__img"/>
+        <span><span class="green-dark">SERVI</span><span class="green-light">Hogar</span></span>
+      </a>
+      <p class="footer-tagline">Bienvenidos a nuestra plataforma<br>de Servicios domésticos</p>
+      <p class="footer-copy">© 2026 SERVIHogar</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Enlaces</h4>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#trabaja">Trabaja con nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Términos y condiciones</a></li>
+        <li><a href="#">Políticas de privacidad</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Síguenos</h4>
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook">
+          <svg width="34" height="34" viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#1877f2"/><path d="M24 12h-2.5C20.5 12 20 12.8 20 14v2h4l-.5 4H20v10h-4V20h-3v-4h3v-2c0-3.3 2-5 5-5 1.4 0 2.9.1 4 .2L24 12z" fill="white"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg width="34" height="34" viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="url(#igf)"/><defs><radialGradient id="igf" cx="30%" cy="100%" r="120%"><stop offset="0%" stop-color="#fdf497"/><stop offset="15%" stop-color="#fd5949"/><stop offset="50%" stop-color="#d6249f"/><stop offset="100%" stop-color="#285aeb"/></radialGradient></defs><rect x="11" y="11" width="18" height="18" rx="5" stroke="white" stroke-width="2" fill="none"/><circle cx="20" cy="20" r="4" stroke="white" stroke-width="2" fill="none"/><circle cx="25.5" cy="14.5" r="1.2" fill="white"/></svg>
+        </a>
+        <a href="#" aria-label="WhatsApp">
+          <svg width="34" height="34" viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#25d366"/><path d="M20 10a10 10 0 00-8.6 15l-1.4 4.2 4.3-1.4A10 10 0 1020 10zm5.2 13.5c-.2.6-1.2 1.2-1.7 1.2-.4 0-.9.2-3-.8s-3.5-3-3.7-3.2c-.2-.2-1.4-1.9-1.4-3.5s.9-2.5 1.2-2.8.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2 0 .4-.1.6l-.5.6c-.1.1-.3.3-.1.6.2.3.9 1.4 1.9 2.2 1.3 1 2.4 1.4 2.7 1.5.3.1.5 0 .7-.2l.5-.7c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.5.5z" fill="white"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ============================================================
+     MODAL LOGIN (Desktop-5 exacto)
+============================================================ -->
+<div class="modal-overlay" id="modal-login">
+  <div class="login-modal">
+    <!-- Panel verde izquierdo -->
+    <div class="login-left">
+      <div class="login-left-logo">
+        <img src="assets/logo.png" alt="SERVIHogar" class="login-logo-img"/>
+        <span class="login-logo-text"><span style="color:#1b4332">SERVI</span><span style="color:#5c8d47">Hogar</span></span>
+      </div>
+      <p class="login-tagline">¡Encuentra o ofrece servicios domésticos cerca de ti, rápido y fácil!</p>
+      <div class="login-socials">
+        <a href="#"><svg width="28" height="28" viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#1877f2"/><path d="M24 12h-2.5C20.5 12 20 12.8 20 14v2h4l-.5 4H20v10h-4V20h-3v-4h3v-2c0-3.3 2-5 5-5 1.4 0 2.9.1 4 .2L24 12z" fill="white"/></svg></a>
+        <a href="#"><svg width="28" height="28" viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="url(#igi)"/><defs><radialGradient id="igi" cx="30%" cy="100%" r="120%"><stop offset="0%" stop-color="#fdf497"/><stop offset="15%" stop-color="#fd5949"/><stop offset="50%" stop-color="#d6249f"/><stop offset="100%" stop-color="#285aeb"/></radialGradient></defs><rect x="11" y="11" width="18" height="18" rx="5" stroke="white" stroke-width="2" fill="none"/><circle cx="20" cy="20" r="4" stroke="white" stroke-width="2" fill="none"/><circle cx="25.5" cy="14.5" r="1.2" fill="white"/></svg></a>
+        <a href="#"><svg width="28" height="28" viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#25d366"/><path d="M20 10a10 10 0 00-8.6 15l-1.4 4.2 4.3-1.4A10 10 0 1020 10zm5.2 13.5c-.2.6-1.2 1.2-1.7 1.2-.4 0-.9.2-3-.8s-3.5-3-3.7-3.2c-.2-.2-1.4-1.9-1.4-3.5s.9-2.5 1.2-2.8.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2 0 .4-.1.6l-.5.6c-.1.1-.3.3-.1.6.2.3.9 1.4 1.9 2.2 1.3 1 2.4 1.4 2.7 1.5.3.1.5 0 .7-.2l.5-.7c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.5.5z" fill="white"/></svg></a>
+      </div>
+    </div>
+    <!-- Formulario derecho -->
+    <div class="login-right">
+      <button class="modal-close" id="close-login">✕</button>
+      <h2 class="login-title">BIENVENIDO</h2>
+      <p class="login-sub">Ingresa los campos para continuar</p>
+      <div class="form-group">
+        <label>Usuario</label>
+        <input type="email" id="login-email" placeholder="correoelectrónico@dominio.com" class="form-input"/>
+      </div>
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" id="login-pass" placeholder="Ingrese su contraseña" class="form-input"/>
+      </div>
+      <label class="check-row"><input type="checkbox"/> Recuérdame</label>
+      <button class="btn-green btn-full btn-continuar" onclick="handleLogin()">Continuar</button>
+      <p class="forgot"><a href="#" onclick="showToast('📧 Revisa tu correo para recuperar tu contraseña.');return false;">¿Has olvidado tu contraseña?</a></p>
+      <button class="btn-google" onclick="showToast('🔗 Iniciando con Google...')">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        Continuar con Google
+      </button>
+      <p class="register-link">¿No tienes una cuenta? <a href="#" onclick="openRegister();return false;" class="link-green">Registrarse</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     MODAL REGISTRO
+============================================================ -->
+<div class="modal-overlay" id="modal-register">
+  <div class="small-modal">
+    <button class="modal-close" id="close-register">✕</button>
+    <div class="small-modal-logo">
+      <img src="assets/logo.png" alt="SERVIHogar" width="36" height="36"/>
+      <span><span class="green-dark">SERVI</span><span class="green-light">Hogar</span></span>
+    </div>
+    <h2>Crear cuenta</h2>
+    <p class="login-sub">Únete a la comunidad SERVIHogar</p>
+    <div class="role-tabs">
+      <button class="role-tab role-active" onclick="selectRole('cliente',this)">Soy Cliente</button>
+      <button class="role-tab" onclick="selectRole('trabajador',this)">Soy Trabajador</button>
+    </div>
+    <div class="form-group"><label>Nombre completo</label><input type="text" id="reg-name" placeholder="Tu nombre completo" class="form-input"/></div>
+    <div class="form-group"><label>Correo electrónico</label><input type="email" id="reg-email" placeholder="correo@ejemplo.com" class="form-input"/></div>
+    <div class="form-group"><label>Contraseña</label><input type="password" id="reg-pass" placeholder="Mínimo 8 caracteres" class="form-input"/></div>
+    <div class="form-group" id="reg-svc" style="display:none">
+      <label>Tipo de servicio</label>
+      <select id="reg-service" class="form-input">
+        <option value="">Selecciona categoría</option>
+        <option>Limpieza</option><option>Electricista</option><option>Gasfitería</option>
+        <option>Jardinería</option><option>Cocina</option><option>Pintura de Interiores</option>
+      </select>
+    </div>
+    <button class="btn-green btn-full btn-continuar" onclick="handleRegister()">Registrarse</button>
+    <p class="register-link">¿Ya tienes cuenta? <a href="#" onclick="openLogin();return false;" class="link-green">Iniciar sesión</a></p>
+  </div>
+</div>
+
+<!-- ============================================================
+     MODAL PERFIL PROFESIONAL
+============================================================ -->
+<div class="modal-overlay" id="modal-profile">
+  <div class="small-modal small-modal--wide">
+    <button class="modal-close" id="close-profile">✕</button>
+    <div class="profile-head">
+      <div class="profile-ava" id="p-ava">ML</div>
+      <div>
+        <h2 id="p-name">Maria Lopez</h2>
+        <span class="pro-category" id="p-cat">Limpieza</span>
+        <div class="pro-rating"><span class="star-y" id="p-stars">★★★★☆</span> <em id="p-rev">4.9 (96 reseñas)</em></div>
+      </div>
+      <span class="verified-badge">✔ Verificado</span>
+    </div>
+    <div class="profile-meta">
+      <span>📍 Lima, Perú</span>
+      <span>🕐 Disponible ahora</span>
+      <span>💰 S/ <span id="p-price">25</span>/hora</span>
+    </div>
+    <p class="profile-bio">Profesional con más de 5 años de experiencia. Comprometida con la calidad y puntualidad en cada servicio. Todos los materiales incluidos.</p>
+    <div class="profile-btns">
+      <button class="btn-green" onclick="requestService()">Solicitar servicio</button>
+      <button class="btn-outline-modal" onclick="showToast('❤️ Guardado en favoritos.');closeModal('modal-profile')">Guardar favorito</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"><span id="toast-msg">¡Listo!</span></div>
+
+<script src="js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function setActiveLink() {
+        let current = navLinks[0];
+
+        navLinks.forEach(link => {
+            const sectionId = link.getAttribute('href').substring(1);
+            const section = document.getElementById(sectionId);
+
+            if (section) {
+                const sectionTop = section.offsetTop - 180;
+                const sectionBottom = sectionTop + section.offsetHeight + 100;
+
+                if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+                    current = link;
+                }
+            }
+        });
+
+        navLinks.forEach(link => link.classList.remove('active'));
+        current.classList.add('active');
+    }
+
+    // === CLIC EN LOS ENLACES ===
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();   // ← importante
+
+            // Quitar active a todos
+            navLinks.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+
+            // Scroll suave a la sección
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+                // Forzar active después del scroll (soluciona el doble click)
+                setTimeout(() => {
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                }, 800);
+            }
+        });
+    });
+
+    // Actualizar con scroll
+    window.addEventListener('scroll', setActiveLink);
+
+    // Al cargar
+    setActiveLink();
+});
+</script>
+</body>
+</html>
