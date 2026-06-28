@@ -1,6 +1,6 @@
 # SERVIHogar – Landing Page
 
-Plataforma digital que conecta a familias y empresas con trabajadores de servicios domésticos y técnicos verificados (limpieza, cocina, jardinería, gasfitería, electricidad, pintura) en Lima, Perú.
+Plataforma digital que conecta a familias y empresas con trabajadores de servicios domésticos y técnicos verificados (limpieza, cocina, jardinería, gasfitería, electricidad, pintura).
 
 ---
 
